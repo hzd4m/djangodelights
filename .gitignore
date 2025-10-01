@@ -1,0 +1,4 @@
+venv/
+
+# Arquivos de banco de dados SQLite
+db.sqlite3
