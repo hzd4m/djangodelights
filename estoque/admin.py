@@ -9,7 +9,8 @@ class IngredienteAdmin(admin.ModelAdmin):
 # Personalização da exibição de Itens do Cardápio
 class ItemCardapioAdmin(admin.ModelAdmin):
     list_display = ("titulo", "preco_venda", "pode_ser_feito")
-    list_filter = ("pode_ser_feito",)
+    # CORREÇÃO: Removido 'pode_ser_feito' daqui.
+    # list_filter só funciona com campos da base de dados, não com métodos.
     search_fields = ("titulo",)
 
 # Personalização da exibição de Requisitos de Receita
@@ -27,3 +28,4 @@ admin.site.register(Ingrediente, IngredienteAdmin)
 admin.site.register(ItemCardapio, ItemCardapioAdmin)
 admin.site.register(RequisitoReceita, RequisitoReceitaAdmin)
 admin.site.register(Compra, CompraAdmin)
+
