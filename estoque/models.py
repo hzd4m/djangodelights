@@ -1,6 +1,6 @@
 from django.db import models
 
-# Representa um ingrediente no stock
+# Representa um ingrediente no Estoque
 class Ingrediente(models.Model):
     nome = models.CharField(max_length=100, unique=True, verbose_name="Nome do Ingrediente")
     quantidade = models.FloatField(default=0.0, verbose_name="Quantidade em Stock")
@@ -18,7 +18,7 @@ class ItemCardapio(models.Model):
     def __str__(self):
         return self.titulo
     
-    # Função para verificar se há stock suficiente para preparar o prato
+    # Função para verificar se há estoque suficiente para preparar o prato
     def pode_ser_feito(self):
         # Percorre todos os ingredientes necessários para este prato
         for requisito in self.requisitos.all():
